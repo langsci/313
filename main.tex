@@ -9,10 +9,10 @@
 
 \documentclass[output=book,
               collection,
-              colorlinks, 
-              citecolor=brown,
               multiauthors,
-              draftmode
+%               colorlinks, 
+%               citecolor=brown,
+%               draftmode
 		      ]{langscibook}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -26,8 +26,6 @@
 \input{localcommands.tex}
 \addbibresource{localbibliography.bib}
 
-% % \includeonly{chapters/02}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             Frontmatter                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +33,6 @@
 \begin{document}
 \maketitle
 \frontmatter
-% %% uncomment if you have preface and/or acknowledgements
 
 \currentpdfbookmark{Contents}{name} % adds a PDF bookmark
 {\sloppy\tableofcontents}
