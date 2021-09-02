@@ -72,21 +72,23 @@ To respect the hierarchical nature of the data (children in classes), the test a
 
 When trying out different models on the training data, we used cross-validation to estimate how well the models would work for new data.\footnote{This section is adapted from \citet{VanhoveEtAl2019}.} This was done to ensure that overzealous data exploration and model fine-tuning would not result in a model that fits the training data well but stands little chance of predicting the test data (see \citealt{KuhnJohnson2013}, \citealt{YarkoniWestfall2017}). In cross-validation, the training data is split up into a number ($k$) of folds, and models are fitted on $k-1$ folds and then used to predict the outcome in the remaining fold. This process is repeated $k$ times, each time leaving out a different fold. The result is $k$ estimates of the models’ predictive accuracy on data not used for fitting the model that can then be averaged. The folds were not constructed randomly, since we need to account for the dependency structure in the data (pupils in classes). Therefore, we opted for block cross-validation, using each class as a separate fold.
 
-Figure 1 illustrates the principles behind the partitioning of the data and block cross-validation.
-
-
-\begin{figure}
-\includegraphics[width=\textwidth]{figures/figure4.1.cross-validation.pdf}
-\caption{Illustration of how the data were partitioned into a training ($N=356$) and a test set ($N=155$) and of how block cross-validation works. Only two iterations of block cross-validation are shown; in reality, 22 took place for each model, each time leaving out a different class. Figure based on Figure~3 in \citet{VanhoveEtAl2019}.}
-\label{fig:04:1}
-\end{figure}
+\figref{fig:04:1} (page \pageref{fig:04:1}) illustrates the principles behind the partitioning of the data and block cross-validation.
 
 \subsection{Metrics of model performance}
 
 The root mean squared error (RMSE) was used to adjudicate between different models. The RMSE can be interpreted as being roughly – but not quite – the average difference between a model’s predictions and the observed values. (In the same way that a standard deviation can be interpreted as being roughly – but not quite – the average difference between the observations and their mean.) The interpretation of the mean absolute error (MAE) is simpler: It is the average (mean) difference between a model’s prediction and the observed values. We report both metrics in this chapter.
 
+\begin{sloppypar}
 Many readers will be more familiar with the R\textsuperscript{2} metric of (so-called) ``explained'' variance. Several problems beset R\textsuperscript{2}, but perhaps most important of all is that R\textsuperscript{2}, as it is traditionally computed, does \textit{not} estimate how well the model itself would capture the variance in a new sample. Instead, it estimates (at best) how well a \textit{newly estimated} model would capture the variance in a new sample.\footnote{There exist different ways of computing R\textsuperscript{2} \citep{Kvålseth1985}. For ordinary regression models, these all yield the same result. However, when the model is used to predict observations that were not used when fitting the model, they do not. One popular method for computing R\textsuperscript{2} is to square the correlation between the predicted and observed values. This is problematic since the correlation between predicted and observed values can be excellent even if the former corresponds poorly to the latter (e.g., the values 1, 2, 3 correlate perfectly with the values 2000, 4000, 6000 but correspond poorly to them). We therefore computed R\textsuperscript{2} as the proportional decrease in the residual sum of squares relative to a baseline model without any predictors. Such a model predicts each new observation to be equal to the mean of the training data (footnote adapted from \citealt{VanhoveEtAl2019}).}
-
+\end{sloppypar}\newpage
+\hbox{}\vfill
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{figures/figure4.1.cross-validation.pdf}
+\caption{Illustration of how the data were partitioned into a training ($N=356$) and a test set ($N=155$) and of how block cross-validation works. Only two iterations of block cross-validation are shown; in reality, 22 took place for each model, each time leaving out a different class. Figure based on Figure~3 in \citet{VanhoveEtAl2019}.}
+\label{fig:04:1}
+\end{figure}
+\vfill\hbox{}
+\clearpage
 \section{Selection of the ``no costs spared'' model}
 
 As shown in \tabref{tab:04:1}, the training set for T3 comprised 169 4\textsuperscript{th} graders and 187 5\textsuperscript{th} graders. The test set comprised 70 4\textsuperscript{th} graders and 85 5\textsuperscript{th} graders.
@@ -95,7 +97,7 @@ To fit the ``no costs spared'' model, all available T1 information, from all pos
 
 To arrive at the final model in this category, a host of models were fitted on the training data. These included multiple linear regression, robust regression, ridge regression, elastic net, multivariate adaptive regression splines, generalized additive models, partial least squares regression, k-nearest neighbors, regression trees, random forests, support vector machines, stochastic gradient boosting, and Cubist.\footnote{For details on the architecture of these models, see www.osf.io} A multiple linear model with seven predictors and no interactions (\tabref{tab:04:2}) performed roughly on par with the more complex approaches in cross-validation. When fitting the final model, we only took into account participants who had T1 English test scores. The model’s estimated coefficients are shown in \tabref{tab:04:2}. 
 
-We want to draw the attention of any reader who wishes to use this model for understanding (as opposed to predicting) foreign-language learning to what \citet{Breiman2001} calls the ``Rashomon effect'': While the presented model worked best in cross-validation, a number of models with different predictors fared only slightly worse. Consequently, one would be jumping to conclusions if one said that the seven predictors listed in \tabref{tab:04:2} are important in foreign-language learning and the others are not. The performance of the more complex models in cross-validation can be consulted in the online materials \footnote{\url{https://osf.io/ha7s2/}}.
+We want to draw the attention of any reader who wishes to use this model for understanding (as opposed to predicting) foreign-language learning to what \citet{Breiman2001} calls the ``Rashomon effect'': While the presented model worked best in cross-validation, a number of models with different predictors fared only slightly worse. Consequently, one would be jumping to conclusions if one said that the seven predictors listed in \tabref{tab:04:2} are important in foreign-language learning and the others are not. The performance of the more complex models in cross-validation can be consulted in the online materials\footnote{\url{https://osf.io/ha7s2/}}.
 
 
 \begin{table}

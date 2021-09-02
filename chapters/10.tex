@@ -56,19 +56,7 @@ We investigated the stability of language aptitude in primary school children ov
  \section{Participants and procedure}
 
 
-The study design is fully described in Chapter 2 and will be summarised briefly: To assess language analytic ability (i.e. grammatical sensitivity and inductive ability), we adapted the following tests for German-speaking young learners\footnote{We would like to thank Charles W. Stansfield for permission to translate and adapt parts of the MLAT-E and PLAB for this study.}: MLAT-E subpart “Matching Words” on grammatical sensitivity (\citealt{CarrollSapon1976}) and PLAB subpart 4 on inductive ability \citep{PimsleurEtAl2004}. The same participants from LAPS II (4\textsuperscript{th} and 5\textsuperscript{th} graders at T1), completed these tests at three different times T1--T3: T1 = Autumn 2017 (mean age 10;5); T2 = Spring 2018 (mean age 11); T3 = Spring 2019 (mean age 12;1). A total of 636 participants completed the tests between T1 and T3. Figures 10.1 and 10.2 show the correlations between the test scores from T1 to T3. \tabref{tab:10:1} summarizes the test results. 
-
-   
-\begin{figure}
-\includegraphics[width=\textwidth]{figures/figure10.1.pdf}
-\caption{\label{fig:10:1} Scatterplot matrices with the MLAT results at the three data collections. Upper triangle: Scatterplots with scatterplot smoothers. Main diagonal: Histograms. Lower triangle: Pearson correlation coefficients as well as the number of data points on which these were based.}
-\end{figure}
-
-  
-\begin{figure}
-\includegraphics[width=\textwidth]{figures/figure10.2.pdf}
-\caption{\label{fig:10:2}PLAB results and correlations at different times of testing T1--T3. Scatterplot matrices with the MLAT results at the three data collections. Upper triangle: Scatterplots with scatterplot smoothers. Main diagonal: Histograms. Lower triangle: Pearson correlation coefficients as well as the number of data points on which these were based.}
-\end{figure}
+The study design is fully described in Chapter 2 and will be summarised briefly: To assess language analytic ability (i.e. grammatical sensitivity and inductive ability), we adapted the following tests for German-speaking young learners\footnote{We would like to thank Charles W. Stansfield for permission to translate and adapt parts of the MLAT-E and PLAB for this study.}: MLAT-E subpart “Matching Words” on grammatical sensitivity (\citealt{CarrollSapon1976}) and PLAB subpart 4 on inductive ability \citep{PimsleurEtAl2004}. The same participants from LAPS II (4\textsuperscript{th} and 5\textsuperscript{th} graders at T1), completed these tests at three different times T1--T3: T1 = Autumn 2017 (mean age 10;5); T2 = Spring 2018 (mean age 11); T3 = Spring 2019 (mean age 12;1). A total of 636 participants completed the tests between T1 and T3. Figures~\ref{fig:10:1} and~\ref{fig:10:2} show the correlations between the test scores from T1 to T3. \tabref{tab:10:1} summarizes the test results. 
 
 \begin{table}
 \caption{\label{tab:10:1}MLAT and PLAB test results at T1--T3. The total number of participants completing the tests at different times between T1--T3 is 636. MLAT has 30 items and PLAB 15.}
@@ -89,8 +77,6 @@ Clearly, the results from the three testing times do not correlate perfectly (th
 
 If we knew the measurement error or the reliability coefficient of the tests, we could solve this problem by calculating disattenuated correlations. While we do not know the actual reliability of the instruments, we can estimate them. The reliability coefficients (\textit{ω\textsubscript{RT,}}, \citealt{McNeish2018}, \citealt{Revelle2019}) for the MLAT variable are 0.90 (T1), 0.89 (T2) and 0.88 (T3); for PLAB: 0.74 (T1), 0.80 (T2) and 0.84 (T3). If we use these values to disattenuate the correlations (using the correct.cor() function in the psych package for R, \citealt{Revelle2018}), we obtain the values in \tabref{tab:10:2}.
 
-
-
 \begin{table}
 \caption{\label{tab:10:2}\label{tab:10:3}Disattenuated correlations MLAT and PLAB}
 \begin{tabular}{lcc cc}
@@ -103,6 +89,17 @@ If we knew the measurement error or the reliability coefficient of the tests, we
 \end{tabular}
 \end{table}
 
+
+\begin{figure}
+\includegraphics[width=\textwidth]{figures/figure10.1.pdf}
+\caption{\label{fig:10:1}Scatterplot matrices with the MLAT results at the three data collections. Upper triangle: Scatterplots with scatterplot smoothers. Main diagonal: Histograms. Lower triangle: Pearson correlation coefficients as well as the number of data points on which these were based.}
+\end{figure}
+
+  
+\begin{figure}
+\includegraphics[width=\textwidth]{figures/figure10.2.pdf}
+\caption{\label{fig:10:2}PLAB results and correlations at different times of testing T1--T3. Scatterplot matrices with the MLAT results at the three data collections. Upper triangle: Scatterplots with scatterplot smoothers. Main diagonal: Histograms. Lower triangle: Pearson correlation coefficients as well as the number of data points on which these were based.}
+\end{figure}
 
 While computing disattenuated correlation coefficients is fairly straightforward, this analysis does not consider the dependence that exists between the tests: The MLAT scores for T1, T2 and T3 are based on the same test items, and the same goes for the PLAB scores. To take these dependencies into account, we ran an alternative, if more involved, analysis in which the participants’ item-level responses were modelled. This analysis was run using generalized (logistic) mixed-effects models, which are capable of estimating the participants’ latent abilities as well as the items’ latent difficulties.
 
