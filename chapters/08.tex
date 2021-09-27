@@ -38,7 +38,7 @@ Although various scholars have pointed out the need for investigating the dynami
 
 An insightful study for the Swiss context comes from \citet{Heinzmann2013}, who investigated primary school students’ English learning motivation and attitudes at three measurement points in 3\textsuperscript{rd}, 4\textsuperscript{th} and 5\textsuperscript{th} grade ($n=552$). Her results suggest that pupils started with a strong motivation that remained relatively stable over the three measurement points. A closer examination of different subdimensions revealed that the biggest changes manifested in a slight drop of the intrinsic motivation from 3\textsuperscript{rd} to 4\textsuperscript{th} grade, while the motivation to use English as a lingua franca became continuously more important over time (cf. \citealt{Heinzmann2013}). Similar results in relation to instrumental motivation, which overlaps with Heinzmann’s lingua franca motivation, were also found by \citet{Nikolov2002} or, in a cross-sectional design, by \citet[256]{Tragant2006}.
 
-Indices for an overall decline of motivation during primary school can be found in \citeauthor{BaderSchaer2005} (\citeyear{BaderSchaer2005}; see also \citealt{SchaerBader2003}, \citealt{Cenoz2004} for similar tendencies for children in the Basque country). In contrast, \citet[324]{PfenningerSingleton2016} show positive development tendencies for older students between 13 and 18 years of age. 
+Indices for an overall decline of motivation during primary school can be found in \citeauthor{BaderSchaer2005} (\citeyear{BaderSchaer2005}; see also \citealt{SchaerBader2003}, or \citealt{Cenoz2004} for similar tendencies for children in the Basque country). In contrast, \citet[324]{PfenningerSingleton2016} show positive development tendencies for older students between 13 and 18 years of age. 
 
 In addition to motivational changes, \citet[93]{Stoeckli2004} investigated the English self-concept of 133 pupils in a longitudinal perspective. His results suggest a decline after the 1\textsuperscript{st} grade, before re-strengthening until the end of 5\textsuperscript{th} grade. Stöckli argues that young children tend to overestimate themselves at the beginning of the learning process, but growing experience reassures the learners continuously (for a related discussion, see also \citealt{MihaljevicDjigunovicLopriore2011}: 50).
 
@@ -110,7 +110,7 @@ The data were processed and analysed in R (R Core \citealt{Team2019}). Datasets 
 
 The results of all final models related to English are summarised in \tabref{tab:08:2}  (cf. analysis report for full output of each model: \url{https://osf.io/r5ypz/}). The intercept indicates the predicted mean for cohort 4 at the first measurement point on a scale of 1 to 4. Estimates for the fixed effect \textit{group} indicate discrepancies between cohort 4 and 5 at T1, effects of \textit{measurement point} (T2 and T3) signal changes in the respective affective dimension over time. An interaction between group and measurement point was only revealed for intrinsic motivation, indicating different developments for the two age cohorts over time (cf. \figref{fig:08:1} and discussion below).
 
-Between-subject variation and between-class variation is displayed under the respective random effect. The ideal L2 self was assessed at T2 and T3 only, and thus, the intercept indicates the predicted mean for T2.
+Between-subject variation and between-class variation is displayed under the respective random effect where applicable. The ideal L2 self was assessed at T2 and T3 only, and thus, the intercept indicates the predicted mean for T2.
 
 
 \begin{table}
@@ -131,7 +131,7 @@ AN & 2.09 & -0.13 +- 0.06 & -0.03 +- 0.03 & -0.02 +- 0.03 & 0.61 & \\
 \caption{Fixed and random effects for English motivation, self-concepts, and anxiety.\label{tab:08:2} AD: Affective dispositions, IM: Intrinsic motivation, SM: School motivation, LM: Leisure motivation, LFM: Lingua Franca motiation, IS: Ideal L2 Self, SC: L2 self-concept, AN: Anxiety, Int.: Intercept.}
 \end{table}
 
-\tabref{tab:08:3}  presents the results for changes in affective dispositions related to French for cohort 5 (as mentioned above, cohort 4 was excluded from these analyses because they didn’t attend French classes at T2). Estimates for \textit{measurement point} indicate changes in affective dispositions between T2 and T3. Between-subject and between-class variation is indicated under the respective random effects.
+\tabref{tab:08:3}  presents the results for changes in affective dispositions related to French for cohort 5 (as mentioned above, cohort 4 was excluded from these analyses because they did not attend French classes at T2). Estimates for \textit{measurement point} indicate changes in affective dispositions between T2 and T3. Between-subject and between-class variation is indicated under the respective random effects where applicable.
 
 \begin{table}
 \begin{tabular}{l c S[separate-uncertainty,table-format=-1.2(1)] c c}
@@ -159,7 +159,7 @@ All effects based on model predictions for intrinsic, school, leisure, and lingu
 \end{figure}
 
 \begin{figure}[p]
-\includegraphics[width=.5\textwidth]{figures/Fig8.2.pdf}
+\includegraphics[width=.66\textwidth]{figures/Fig8.2.pdf}
 \caption{Dynamics of affective dispositions related to French\label{fig:08:2}}
 \end{figure}
 
@@ -169,7 +169,7 @@ As the data in \tabref{tab:08:2}  and \figref{fig:08:1} suggest, affective dispo
 The only dimension where an interaction between group and measurement point could be identified is the intrinsic motivation: While this motivation steadily strengthens for cohort 5, it grows slightly for cohort 4 between the first and second measurement, before dropping again by T3. 
 \end{sloppypar}
 
-While a certain between-subject variation could be identified, the analysis revealed no considerable class effects.
+While a certain between-subject variation could be identified, the analysis revealed no class effects (therefore, no standard deviations are displayed in the respective column of table 3).
 
 With regard to French as the second foreign language, \tabref{tab:08:3}  and \figref{fig:08:2}  suggest a rather different situation. L2 motivation and its antecedents seem less stable than in English. In addition, students generally start with lower motivation and self-concepts at T2, and, at the same time, foreign language anxiety is somewhat higher than in English. Over the course of one school year, students’ motivation and self-concepts weaken, whereas anxiety grows notably.
 
@@ -194,14 +194,14 @@ FR PE & 2.71 &               & -0.13 +-0.05  &              & 0.59 & \\
 \end{table}
 
   
-\begin{figure}
-\includegraphics[width=\textwidth]{figures/Fig8.3.pdf}
+\begin{figure}[p]
+\includegraphics[width=.95\textwidth]{figures/Fig8.3.pdf}
 \caption{Dynamics of perceived teacher and parental encouragement (English)\label{fig:08:3}}
 \end{figure}
 
   
-\begin{figure}
-\includegraphics[width=.5\textwidth]{figures/Fig8.4.pdf}
+\begin{figure}[p]
+\includegraphics[width=.64\textwidth]{figures/Fig8.4.pdf}
 \caption{Dynamics of perceived teacher and parental encouragement (French)\label{fig:08:4}}
 \end{figure}
 
